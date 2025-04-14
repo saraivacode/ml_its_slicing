@@ -945,12 +945,12 @@ print(f"F1-Score: {f1_lstm*100:.2f}%")
 from sklearn.metrics import precision_recall_fscore_support
 
 # Obter métricas por classe
-precision, recall, f1, support = precision_recall_fscore_support(y_test, predicted_classes_mlp)
+precision, recall, f1, support = precision_recall_fscore_support(y_test, predicted_classes_lstm)
 
 # Calcular a acurácia por classe manualmente
 accuracy_per_class = []
 for cls in range(len(support)):
-    correct_predictions = sum((y_test == cls) & (predicted_classes_mlp == cls))
+    correct_predictions = sum((y_test == cls) & (predicted_classes_lstm == cls))
     accuracy = correct_predictions / support[cls]
     accuracy_per_class.append(accuracy)
 
@@ -1018,12 +1018,12 @@ print(f"F1-Score: {f1_rnn*100:.2f}%")
 from sklearn.metrics import precision_recall_fscore_support
 
 # Obter métricas por classe
-precision, recall, f1, support = precision_recall_fscore_support(y_test, predicted_classes_mlp)
+precision, recall, f1, support = precision_recall_fscore_support(y_test, predicted_classes_rnn)
 
 # Calcular a acurácia por classe manualmente
 accuracy_per_class = []
 for cls in range(len(support)):
-    correct_predictions = sum((y_test == cls) & (predicted_classes_mlp == cls))
+    correct_predictions = sum((y_test == cls) & (predicted_classes_rnn == cls))
     accuracy = correct_predictions / support[cls]
     accuracy_per_class.append(accuracy)
 
@@ -1093,12 +1093,12 @@ print(f"F1-Score: {f1_gru*100:.2f}%")
 from sklearn.metrics import precision_recall_fscore_support
 
 # Obter métricas por classe
-precision, recall, f1, support = precision_recall_fscore_support(y_test, predicted_classes_mlp)
+precision, recall, f1, support = precision_recall_fscore_support(y_test, predicted_classes_gru)
 
 # Calcular a acurácia por classe manualmente
 accuracy_per_class = []
 for cls in range(len(support)):
-    correct_predictions = sum((y_test == cls) & (predicted_classes_mlp == cls))
+    correct_predictions = sum((y_test == cls) & (predicted_classes_gru == cls))
     accuracy = correct_predictions / support[cls]
     accuracy_per_class.append(accuracy)
 
